@@ -1,7 +1,7 @@
 # Uniprot Annotation Downloader
 <b>Description:</b> 
 
-A standalone software tool for downloading subcellular annotation from UniProt database. The compressed output is a .gz file ready to be used in the [Perseus software platform](https://maxquant.net/perseus/)
+A standalone software tool for the retrieval of subcellular location and topology annotation from UniProt database. The compressed output is a .gz file ready to be used in the [Perseus software platform](https://maxquant.net/perseus/)
 
 <b>Usage:</b> 
 
