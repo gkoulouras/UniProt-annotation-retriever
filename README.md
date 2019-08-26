@@ -9,7 +9,7 @@ Simply download and execute the <b>UniProt Annotation Downloader.exe</b> executa
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/UniProtAnnotDownloader.png)
 
-Next, locate the downloaded <b>proteinAnnotations.txt.gz</b> file and simply copy and paste it into the <b>bin/conf/annotations</b> folder of the Perseus software. Re-start Perseus (in case it's already open) and you will be able to see the new file by choosing Annot. columns --> Add Annotation in Perseus GUI, as shown below.
+Next, locate the downloaded <b>proteinAnnotations.txt.gz</b> file and simply copy and paste it into the <b>bin/conf/annotations</b> folder of the Perseus software. Re-start Perseus (in case it's already open) and you will be able to see the new file in Perseus GUI by selecting Annot. columns --> Add Annotation , as shown below.
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/PerseusScreenShot1.png)
 
