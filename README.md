@@ -6,6 +6,8 @@ A standalone software tool for downloading subcellular annotation from UniProt d
 <b>Usage:</b> 
 
 Simply download and execute the <b>UniProt Annotation Downloader.exe</b> executable which is located under the <b>bin/Release</b> directory. Two sample files to test exist under the folder <b>dummy_files</b>. Press 'Select File', choose a file which contains a list of UniProt IDs, select or deselect any of the checkboxes (by default all options are selected and will be downloaded) and click 'Start'.
+![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/UniProtAnnotDownloader.png)
+
 
 <b>Contact:</b>
 
