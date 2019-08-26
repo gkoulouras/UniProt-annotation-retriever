@@ -2,7 +2,7 @@
 <b>Description:</b> A standalone software tool for downloading subcellular annotation from UniProt database. The compressed output is a ready-to-use .gz file in the [Perseus software platform](https://maxquant.net/perseus/)
 
 <b>Usage:</b> 
-Simply download and execute the <b>nullomers_assessor.py</b> executable which is located in bin/Release directory.
+Simply download and execute the <b>UniProt Annotation Downloader.exe</b> executable which is located under the <b>bin/Release</b> directory.
 
 
 <b>Contact:</b>
