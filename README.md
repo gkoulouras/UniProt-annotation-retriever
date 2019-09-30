@@ -1,11 +1,11 @@
 # Uniprot Annotation Downloader
 <b>Description:</b> 
 
-A standalone software tool for the retrieval of subcellular location and topology annotation from UniProt database. The output is a compressed (.gz) ready-to-use file for the [Perseus software platform](https://maxquant.net/perseus/)
+A standalone software tool for the retrieval of subcellular location, topology annotation, regions and amino acid modifications from UniProt database. The output is a compressed (.gz) ready-to-use file for the [Perseus software platform](https://maxquant.net/perseus/)
 
 <b>Usage:</b> 
 
-Simply download and run the <b>UniProt Annotation Downloader.exe</b> executable which is located under the <b>bin/Release</b> directory of this GitHub repository. Additionally, two sample files are provided under the folder <b>dummy_files</b> for testing purposes. Press 'Select File', choose a file which contains a list of UniProt IDs, select or deselect any of the checkboxes (by default all options are selected and will be downloaded) and click 'Start'. The tool will retrieve in real-time from [UniProt](https://www.uniprot.org/) all the selected annotation features for the given protein IDs. 
+Simply download and run the <b>UniProt Annotation Downloader.exe</b> executable which is located under the <b>bin/Release</b> directory of this GitHub repository. Additionally, two sample files are provided under the folder <b>dummy_files</b> for testing purposes. Press 'Select File', choose a file which contains a list of UniProt IDs, select or deselect any of the checkboxes (by default all options are selected and will be downloaded) and click 'Start'. The tool will retrieve in real-time all the selected annotation features from [UniProt](https://www.uniprot.org/) for the given protein IDs. 
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/UniProtAnnotDownloader.png)
 
