@@ -43,6 +43,12 @@ Public Class Form1
                     proteinAnnot.Columns.Add("location", Type.GetType("System.String"))
                     proteinAnnot.Columns.Add("topology", Type.GetType("System.String"))
                     proteinAnnot.Columns.Add("molecule_processing", Type.GetType("System.String"))
+                    proteinAnnot.Columns.Add("region", Type.GetType("System.String"))
+                    proteinAnnot.Columns.Add("region_desc", Type.GetType("System.String"))
+                    proteinAnnot.Columns.Add("region_pos", Type.GetType("System.String"))
+                    proteinAnnot.Columns.Add("modification", Type.GetType("System.String"))
+                    proteinAnnot.Columns.Add("modif_desc", Type.GetType("System.String"))
+                    proteinAnnot.Columns.Add("modif_pos", Type.GetType("System.String"))
 
                     Dim sr As New IO.StreamReader(filePath)
 
@@ -66,9 +72,21 @@ Public Class Form1
                             Dim proteinID As String = proteinIDs.Rows(iter).Item(0)
                             Dim type As String = String.Empty
                             Dim type2 As String = String.Empty
+                            Dim type3 As String = String.Empty
                             Dim location As String = String.Empty
                             Dim topology As String = String.Empty
                             Dim mol_processing As String = String.Empty
+                            Dim region As String = String.Empty
+                            Dim region_desc As String = String.Empty
+                            Dim begin_pos As String = String.Empty
+                            Dim end_pos As String = String.Empty
+                            Dim region_pos As String = String.Empty
+                            Dim modification As String = String.Empty
+                            Dim modif_desc As String = String.Empty
+                            Dim modif_pos As String = String.Empty
+                            Dim modif_begin_pos As String = String.Empty
+                            Dim modif_end_pos As String = String.Empty
+
 
                             Try
 
@@ -117,10 +135,61 @@ Public Class Form1
 
                                     For Each feature2 As XmlElement In entry.GetElementsByTagName("feature")
                                         type2 = GetAttibuteValue(feature2, "type")
+                                        type3 = GetAttibuteValue(feature2, "description")
 
                                         If type2 = "initiator methionine" Or type2 = "signal peptide" Or type2 = "transit peptide" Or type2 = "propeptide" Or type2 = "chain" Or type2 = "peptide" Then
                                             mol_processing = mol_processing & ";" & type2
+                                        ElseIf type2 = "topological domain" Or type2 = "transmembrane region" Or type2 = "intramembrane region" Or type2 = "domain" Or type2 = "repeat" Or type2 = "calcium-binding region" Or type2 = "zinc finger region" Or type2 = "DNA-binding region" Or type2 = "binding site" Or type2 = "region of interest" Or type2 = "coiled-coil region" Or type2 = "short sequence motif" Or type2 = "compositionally biased region" Then
+                                            region = region & ";" & type2
+                                            region_desc = region_desc & ";" & type3
+                                            For Each feature3 As XmlElement In feature2.GetElementsByTagName("location")
+                                                For Each feature4 As XmlElement In feature3.GetElementsByTagName("begin")
+                                                    begin_pos = GetAttibuteValue(feature4, "position")
+                                                Next
+                                                For Each feature4 As XmlElement In feature3.GetElementsByTagName("end")
+                                                    end_pos = GetAttibuteValue(feature4, "position")
+                                                Next
+                                                region_pos = region_pos & ";" & begin_pos & "-" & end_pos
+                                            Next
+                                        ElseIf type2 = "glycosylation site" Or type2 = "non-standard amino acid" Or type2 = "modified residue" Or type2 = "lipid moiety-binding region" Then
+                                            modification = modification & ";" & type2
+                                            modif_desc = modif_desc & ";" & type3
+                                            For Each feature5 As XmlElement In feature2.GetElementsByTagName("position")
+                                                modif_pos = modif_pos & ";" & GetAttibuteValue(feature5, "position")
+                                            Next
+                                        ElseIf type2 = "disulfide bond" Then
+                                            modification = modification & ";" & type2
+                                            modif_desc = modif_desc & ";" & type3
+                                            For Each feature5 As XmlElement In feature2.GetElementsByTagName("location")
+                                                For Each feature6 As XmlElement In feature5.GetElementsByTagName("begin")
+                                                    modif_begin_pos = GetAttibuteValue(feature6, "position")
+                                                Next
+                                                For Each feature6 As XmlElement In feature5.GetElementsByTagName("end")
+                                                    modif_end_pos = GetAttibuteValue(feature6, "position")
+                                                Next
+                                                modif_pos = modif_pos & ";" & modif_begin_pos & "-" & modif_end_pos
+                                            Next
+                                        ElseIf type2 = "cross-link" Then
+                                            modification = modification & ";" & type2
+                                            modif_desc = modif_desc & ";" & type3
+                                            For Each feature5 As XmlElement In feature2.GetElementsByTagName("location")
+
+                                                For Each feature6 As XmlElement In feature5.GetElementsByTagName("begin")
+                                                    modif_begin_pos = GetAttibuteValue(feature6, "position")
+                                                Next
+                                                For Each feature6 As XmlElement In feature5.GetElementsByTagName("end")
+                                                    modif_end_pos = GetAttibuteValue(feature6, "position")
+                                                Next
+                                                If modif_begin_pos = "" And modif_end_pos = "" Then
+                                                    For Each feature7 As XmlElement In feature5.GetElementsByTagName("position")
+                                                        modif_pos = modif_pos & ";" & GetAttibuteValue(feature7, "position")
+                                                    Next
+                                                Else
+                                                    modif_pos = modif_pos & ";" & modif_begin_pos & "-" & modif_end_pos
+                                                End If
+                                            Next
                                         End If
+
 
                                     Next
                                     If Len(mol_processing) > 0 Then
@@ -130,10 +199,61 @@ Public Class Form1
                                         mol_processinglist.Sort()
                                         mol_processing = String.Join(" ; ", mol_processinglist)
                                     End If
+                                    If Len(region) > 0 Then
+                                        region = region.Substring(1, Len(region) - 1)
+                                        Dim regionlist As New List(Of String)(region.Split(";"c))
+                                        regionlist = regionlist.ToList()
+                                        'regionlist = regionlist.Distinct().ToList()
+                                        'regionlist.Sort()
+                                        region = String.Join(" ; ", regionlist)
+                                    End If
+                                    If Len(region_desc) > 0 Then
+                                        region_desc = region_desc.Substring(1, Len(region_desc) - 1)
+                                        Dim region_desclist As New List(Of String)(region_desc.Split(";"c))
+                                        region_desclist = region_desclist.ToList()
+                                        'region_desclist = region_desclist.Distinct().ToList()
+                                        'region_desclist.Sort()
+                                        region_desc = String.Join(" ; ", region_desclist)
+                                    End If
+                                    If Len(region_pos) > 0 Then
+                                        region_pos = region_pos.Substring(1, Len(region_pos) - 1)
+                                        Dim region_poslist As New List(Of String)(region_pos.Split(";"c))
+                                        region_poslist = region_poslist.ToList()
+                                        'region_poslist = region_poslist.Distinct().ToList()
+                                        'region_desclist.Sort()
+                                        region_pos = String.Join(" ; ", region_poslist)
+                                    End If
+
+                                    If Len(modification) > 0 Then
+                                        modification = modification.Substring(1, Len(modification) - 1)
+                                        Dim modificationlist As New List(Of String)(modification.Split(";"c))
+                                        modificationlist = modificationlist.ToList()
+                                        'regionlist = regionlist.Distinct().ToList()
+                                        'regionlist.Sort()
+                                        modification = String.Join(" ; ", modificationlist)
+                                    End If
+                                    If Len(modif_desc) > 0 Then
+                                        modif_desc = modif_desc.Substring(1, Len(modif_desc) - 1)
+                                        Dim modif_desclist As New List(Of String)(modif_desc.Split(";"c))
+                                        modif_desclist = modif_desclist.ToList()
+                                        'regionlist = regionlist.Distinct().ToList()
+                                        'regionlist.Sort()
+                                        modif_desc = String.Join(" ; ", modif_desclist)
+                                    End If
+                                    If Len(modif_pos) > 0 Then
+                                        modif_pos = modif_pos.Substring(1, Len(modif_pos) - 1)
+                                        Dim modif_poslist As New List(Of String)(modif_pos.Split(";"c))
+                                        modif_poslist = modif_poslist.ToList()
+                                        'regionlist = regionlist.Distinct().ToList()
+                                        'regionlist.Sort()
+                                        modif_pos = String.Join(" ; ", modif_poslist)
+                                    End If
+
+
 
                                 Next
 
-                                proteinAnnot.Rows.Add(proteinID, location, topology, mol_processing)
+                                proteinAnnot.Rows.Add(proteinID, location, topology, mol_processing, region, region_desc, region_pos, modification, modif_desc, modif_pos)
                                 iter += 1
 
                             Catch ex As Exception
@@ -162,6 +282,16 @@ Public Class Form1
                                 If MolProcChckBox.Checked = True Then
                                     headerLine1 &= "" + vbTab + "Molecule processing"
                                 End If
+                                If regionsChckBox.Checked = True Then
+                                    headerLine1 &= "" + vbTab + "Regions"
+                                    headerLine1 &= "" + vbTab + "Description of Regions"
+                                    headerLine1 &= "" + vbTab + "Positions of Regions"
+                                End If
+                                If modificationsChckBox.Checked = True Then
+                                    headerLine1 &= "" + vbTab + "Modifications"
+                                    headerLine1 &= "" + vbTab + "Description of Modifications"
+                                    headerLine1 &= "" + vbTab + "Positions of Modifications"
+                                End If
                                 'file.WriteLine("UniprotID" + vbTab + "Location" + vbTab + "Topology" + vbTab + "Molecule processing")
                                 file.WriteLine(headerLine1)
 
@@ -173,6 +303,16 @@ Public Class Form1
                                     headerLine2 = headerLine2 & "" + vbTab + "Categorical"
                                 End If
                                 If MolProcChckBox.Checked = True Then
+                                    headerLine2 = headerLine2 & "" + vbTab + "Categorical"
+                                End If
+                                If regionsChckBox.Checked = True Then
+                                    headerLine2 = headerLine2 & "" + vbTab + "Categorical"
+                                    headerLine2 = headerLine2 & "" + vbTab + "Categorical"
+                                    headerLine2 = headerLine2 & "" + vbTab + "Categorical"
+                                End If
+                                If modificationsChckBox.Checked = True Then
+                                    headerLine2 = headerLine2 & "" + vbTab + "Categorical"
+                                    headerLine2 = headerLine2 & "" + vbTab + "Categorical"
                                     headerLine2 = headerLine2 & "" + vbTab + "Categorical"
                                 End If
                                 'file.WriteLine("#!{Type}" + vbTab + "Categorical" + vbTab + "Categorical" + vbTab + "Categorical")
@@ -188,6 +328,16 @@ Public Class Form1
                                     End If
                                     If MolProcChckBox.Checked = True Then
                                         mainTxt = mainTxt + vbTab + proteinAnnot.Rows(i).Item("molecule_processing")
+                                    End If
+                                    If regionsChckBox.Checked = True Then
+                                        mainTxt = mainTxt + vbTab + proteinAnnot.Rows(i).Item("region")
+                                        mainTxt = mainTxt + vbTab + proteinAnnot.Rows(i).Item("region_desc")
+                                        mainTxt = mainTxt + vbTab + proteinAnnot.Rows(i).Item("region_pos")
+                                    End If
+                                    If regionsChckBox.Checked = True Then
+                                        mainTxt = mainTxt + vbTab + proteinAnnot.Rows(i).Item("modification")
+                                        mainTxt = mainTxt + vbTab + proteinAnnot.Rows(i).Item("modif_desc")
+                                        mainTxt = mainTxt + vbTab + proteinAnnot.Rows(i).Item("modif_pos")
                                     End If
                                     'file.WriteLine(proteinAnnot.Rows(i).Item("uniprotID") + vbTab + proteinAnnot.Rows(i).Item("location") + vbTab + proteinAnnot.Rows(i).Item("topology") + vbTab + proteinAnnot.Rows(i).Item("molecule_processing"))
                                     file.WriteLine(mainTxt)

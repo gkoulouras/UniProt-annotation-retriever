@@ -32,6 +32,8 @@ Partial Class Form1
         Me.StartBtn = New System.Windows.Forms.Button()
         Me.StopBtn = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.modificationsChckBox = New System.Windows.Forms.CheckBox()
+        Me.regionsChckBox = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.LogTxtBox = New System.Windows.Forms.TextBox()
         Me.version_lbl = New System.Windows.Forms.Label()
@@ -76,7 +78,7 @@ Partial Class Form1
         Me.LocationChckBox.AutoSize = True
         Me.LocationChckBox.Checked = True
         Me.LocationChckBox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.LocationChckBox.Location = New System.Drawing.Point(7, 142)
+        Me.LocationChckBox.Location = New System.Drawing.Point(7, 132)
         Me.LocationChckBox.Name = "LocationChckBox"
         Me.LocationChckBox.Size = New System.Drawing.Size(67, 17)
         Me.LocationChckBox.TabIndex = 3
@@ -88,7 +90,7 @@ Partial Class Form1
         Me.TopologyChckBox.AutoSize = True
         Me.TopologyChckBox.Checked = True
         Me.TopologyChckBox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.TopologyChckBox.Location = New System.Drawing.Point(7, 168)
+        Me.TopologyChckBox.Location = New System.Drawing.Point(7, 158)
         Me.TopologyChckBox.Name = "TopologyChckBox"
         Me.TopologyChckBox.Size = New System.Drawing.Size(70, 17)
         Me.TopologyChckBox.TabIndex = 4
@@ -100,7 +102,7 @@ Partial Class Form1
         Me.MolProcChckBox.AutoSize = True
         Me.MolProcChckBox.Checked = True
         Me.MolProcChckBox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.MolProcChckBox.Location = New System.Drawing.Point(7, 191)
+        Me.MolProcChckBox.Location = New System.Drawing.Point(7, 181)
         Me.MolProcChckBox.Name = "MolProcChckBox"
         Me.MolProcChckBox.Size = New System.Drawing.Size(124, 17)
         Me.MolProcChckBox.TabIndex = 5
@@ -130,6 +132,8 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.modificationsChckBox)
+        Me.GroupBox1.Controls.Add(Me.regionsChckBox)
         Me.GroupBox1.Controls.Add(Me.StartBtn)
         Me.GroupBox1.Controls.Add(Me.StopBtn)
         Me.GroupBox1.Controls.Add(Me.SelectFileBtn)
@@ -144,6 +148,30 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Application parameters"
+        '
+        'modificationsChckBox
+        '
+        Me.modificationsChckBox.AutoSize = True
+        Me.modificationsChckBox.Checked = True
+        Me.modificationsChckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.modificationsChckBox.Location = New System.Drawing.Point(7, 227)
+        Me.modificationsChckBox.Name = "modificationsChckBox"
+        Me.modificationsChckBox.Size = New System.Drawing.Size(144, 17)
+        Me.modificationsChckBox.TabIndex = 9
+        Me.modificationsChckBox.Text = "Amino Acid Modifications"
+        Me.modificationsChckBox.UseVisualStyleBackColor = True
+        '
+        'regionsChckBox
+        '
+        Me.regionsChckBox.AutoSize = True
+        Me.regionsChckBox.Checked = True
+        Me.regionsChckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.regionsChckBox.Location = New System.Drawing.Point(6, 204)
+        Me.regionsChckBox.Name = "regionsChckBox"
+        Me.regionsChckBox.Size = New System.Drawing.Size(65, 17)
+        Me.regionsChckBox.TabIndex = 8
+        Me.regionsChckBox.Text = "Regions"
+        Me.regionsChckBox.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -169,9 +197,9 @@ Partial Class Form1
         Me.version_lbl.AutoSize = True
         Me.version_lbl.Location = New System.Drawing.Point(746, 413)
         Me.version_lbl.Name = "version_lbl"
-        Me.version_lbl.Size = New System.Drawing.Size(104, 13)
+        Me.version_lbl.Size = New System.Drawing.Size(110, 13)
         Me.version_lbl.TabIndex = 10
-        Me.version_lbl.Text = "version 1.02.190619"
+        Me.version_lbl.Text = "version 1.03 (190927)"
         '
         'GroupBox3
         '
@@ -231,4 +259,6 @@ Partial Class Form1
     Friend WithEvents version_lbl As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents ErrorLogTxtBox As TextBox
+    Friend WithEvents regionsChckBox As CheckBox
+    Friend WithEvents modificationsChckBox As CheckBox
 End Class
