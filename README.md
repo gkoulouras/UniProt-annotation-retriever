@@ -1,4 +1,4 @@
-# Uniprot Annotation Downloader
+# Uniprot Annotation Downloader (version 1.04)
 <b>Description:</b> 
 
 A standalone software tool for the retrieval of subcellular location, topology annotation, regions and amino acid modifications from UniProt database. The output is a compressed (.gz) ready-to-use file for the [Perseus software platform](https://maxquant.net/perseus/)
