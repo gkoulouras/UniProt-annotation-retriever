@@ -20,7 +20,7 @@ For questions, suggestions, bug-reports or feedback, please get in touch by emai
 
 <b>Cite us:</b>
 
-If you use this tool or data derived from this software in your research work please consider citing the following DOI: 10.5281/zenodo.6645639
+If you use this tool or data derived from this software in your research work please consider citing the following DOI: [10.5281/zenodo.6645639](https://doi.org/10.5281/zenodo.6645639)
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/zenodo.6645639.svg)
 
