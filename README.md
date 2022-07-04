@@ -16,7 +16,7 @@ A standalone software tool that retrieves subcellular location, topology annotat
 
 ## Installation Guide
 
-You can simply download and run the <b>UniProt Annotation Downloader.exe</b> executable file which is located under the <b>bin/Release</b> directory of this GitHub repository. Additionally, a sample file with a list of UniProt IDs is provided under the <b>test_files</b> directory for testing purposes. Press the button 'Select File', choose a file which contains a list of UniProt IDs, select or deselect the annotation categories of your interest (by default all options are selected and will be downloaded) and click 'Start'. The tool retrieves in real-time all the selected features for the given protein IDs from [UniProt](https://www.uniprot.org/). 
+You can simply download and run the <b>UniProt Annotation Downloader.exe</b> executable file which is located under the <b>Latest Release</b> section of this GitHub repository. Additionally, a sample file with a list of UniProt IDs is provided under the <b>test_files</b> directory for testing purposes. Press the button 'Select File', choose a file which contains a list of UniProt IDs, select or deselect the annotation categories of your interest (by default all options are selected and will be downloaded) and click 'Start'. The tool retrieves in real-time all the selected features for the given protein IDs from [UniProt](https://www.uniprot.org/). 
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/UniProtAnnotDownloader.png)
 
