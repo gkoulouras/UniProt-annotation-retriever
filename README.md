@@ -3,21 +3,18 @@
 ## Contents
 
 - [Overview](#overview)
-- [Repo Contents](#repo-contents)
-- [System Requirements](#system-requirements)
 - [Installation Guide](#installation-guide)
+- [System Requirements](#system-requirements)
 - [Demo](#demo)
 - [Results](#results)
 - [License](./LICENSE)
-- [Issues](https://github.com/ebridge2/lol/issues)
 - [Citation](#citation)
 
-
-# Overview
+## Overview
 
 A standalone software tool that retrieves subcellular location, topology annotation, signal peptides, regions and amino acid modifications from UniProt database. The output is a compressed (.gz) ready-to-use file for the [Perseus software platform](https://maxquant.net/perseus/)
 
-## Installation
+## Installation Guide
 
 You can simply download and run the <b>UniProt Annotation Downloader.exe</b> executable file which is located under the <b>bin/Release</b> directory of this GitHub repository. Additionally, a sample file with a list of UniProt IDs is provided under the <b>test_files</b> directory for testing purposes. Press the button 'Select File', choose a file which contains a list of UniProt IDs, select or deselect the annotation categories of your interest (by default all options are selected and will be downloaded) and click 'Start'. The tool retrieves in real-time all the selected features for the given protein IDs from [UniProt](https://www.uniprot.org/). 
 
@@ -27,27 +24,24 @@ Next, locate the <b>proteinAnnotations.txt.gz</b> file which will be created by 
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/PerseusScreenShot1.png)
 
-# System Requirements
+## System Requirements
 
 The latest release of the software (version 1.0.4) has been tested on Windows 10 operating systems.
 
-
-<b>Contact:</b>
+## Contact
 
 For questions, suggestions, bug-reports or feedback, please get in touch by email:
 <ul><li>gkoulouras {at} gmail {dot} com</li></ul>
 
-# Citation
+## Citation
 
 If you use this tool or data derived from this software in your research work please consider citing the following DOI: [10.5281/zenodo.6645639](https://doi.org/10.5281/zenodo.6645639)
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/zenodo.6645639.svg)
 
-<b>License:</b>
+## License
 
 This project is licensed under the Apache 2.0 license, quoted below.
-
-Copyright (c) 2019 Grigorios Koulouras
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
