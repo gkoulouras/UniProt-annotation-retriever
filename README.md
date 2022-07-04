@@ -3,9 +3,9 @@
 ## Contents
 
 - [Overview](#overview)
+- [System Requirements](#system-requirements)
 - [Dependencies](#dependencies)
 - [Installation Guide](#installation-guide)
-- [System Requirements](#system-requirements)
 - [Contact](#contact)
 - [Citation](#citation)
 - [License](#license)
@@ -14,6 +14,15 @@
 ## Overview
 
 A standalone software tool that retrieves subcellular location, topology annotation, signal peptides, regions and amino acid modifications from UniProt database. The output is a compressed (.gz) ready-to-use file in the [Perseus software platform](https://maxquant.net/perseus/)
+
+## System Requirements
+
+The software requires only a standard computer with enough RAM to support the operations defined by a user. Windows is the only supported OS at the moment. The latest release of the software (version 1.0.4) has been tested on Windows 10 operating systems with minimum 8GB of RAM and a dual-core i5-4200M CPU @2.50GHz. For optimal performance, we recommend a computer with the following specs:
+
+RAM: 16+ GB
+CPU: 4+ cores, 3.0+ GHz/core
+
+and internet connection of speed > 25 Mbps.
 
 ## Dependencies
 
@@ -29,14 +38,6 @@ Next, locate the <b>proteinAnnotations.txt.gz</b> file which will be created by 
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/PerseusScreenShot1.png)
 
-## System Requirements
-
-The software requires only a standard computer with enough RAM to support the operations defined by a user. Windows is the only supported OS at the moment. The latest release of the software (version 1.0.4) has been tested on Windows 10 operating systems with minimum 8GB of RAM and a dual-core i5-4200M CPU @2.50GHz. For optimal performance, we recommend a computer with the following specs:
-
-RAM: 16+ GB
-CPU: 4+ cores, 3.0+ GHz/core
-
-and internet connection of speed > 25 Mbps.
 
 ## Contact
 
