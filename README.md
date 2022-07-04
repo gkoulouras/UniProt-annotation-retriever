@@ -31,7 +31,7 @@ The software requires only a standard computer with enough RAM to support the op
 RAM: 16+ GB
 CPU: 4+ cores, 3.0+ GHz/core
 
-and interet connection of speed > 25 Mbps.
+and internet connection of speed > 25 Mbps.
 
 ## Contact
 
