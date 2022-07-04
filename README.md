@@ -12,7 +12,7 @@
 
 ## Overview
 
-A standalone software tool that retrieves subcellular location, topology annotation, signal peptides, regions and amino acid modifications from UniProt database. The output is a compressed (.gz) ready-to-use file for the [Perseus software platform](https://maxquant.net/perseus/)
+A standalone software tool that retrieves subcellular location, topology annotation, signal peptides, regions and amino acid modifications from UniProt database. The output is a compressed (.gz) ready-to-use file in the [Perseus software platform](https://maxquant.net/perseus/)
 
 ## Installation Guide
 
