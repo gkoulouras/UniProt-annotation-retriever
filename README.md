@@ -37,7 +37,7 @@ The latest release of the software (version 1.0.4) has been tested on Windows 10
 For questions, suggestions, bug-reports or feedback, please get in touch by email:
 <ul><li>gkoulouras {at} gmail {dot} com</li></ul>
 
-<b>Citation:</b>
+# Citation
 
 If you use this tool or data derived from this software in your research work please consider citing the following DOI: [10.5281/zenodo.6645639](https://doi.org/10.5281/zenodo.6645639)
 
