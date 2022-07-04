@@ -1,11 +1,25 @@
 # Uniprot Annotation Downloader (version 1.0.4)
-<b>Description:</b> 
+
+## Contents
+
+- [Overview](#overview)
+- [Repo Contents](#repo-contents)
+- [System Requirements](#system-requirements)
+- [Installation Guide](#installation-guide)
+- [Demo](#demo)
+- [Results](#results)
+- [License](./LICENSE)
+- [Issues](https://github.com/ebridge2/lol/issues)
+- [Citation](#citation)
+
+
+# Overview
 
 A standalone software tool that retrieves subcellular location, topology annotation, signal peptides, regions and amino acid modifications from UniProt database. The output is a compressed (.gz) ready-to-use file for the [Perseus software platform](https://maxquant.net/perseus/)
 
-<b>Usage:</b> 
+<b>Installation:</b> 
 
-You can simply download and run the <b>UniProt Annotation Downloader.exe</b> executable file which is located under the <b>bin/Release</b> directory of this GitHub repository. Additionally, two sample files are provided under the folder <b>dummy_files</b> for testing purposes. Press 'Select File', choose a file which contains a list of UniProt IDs, select or deselect any of the checkboxes (by default all options are selected and will be downloaded) and click 'Start'. The tool retrieves all the selected annotation features of the given protein IDs from [UniProt](https://www.uniprot.org/) in real-time. 
+You can simply download and run the <b>UniProt Annotation Downloader.exe</b> executable file which is located under the <b>bin/Release</b> directory of this GitHub repository. Additionally, a sample file with a list of UniProt IDs is provided under the <b>test_files</b> directory for testing purposes. Press the button 'Select File', choose a file which contains a list of UniProt IDs, select or deselect the annotation categories of your interest (by default all options are selected and will be downloaded) and click 'Start'. The tool retrieves in real-time all the selected features for the given protein IDs from [UniProt](https://www.uniprot.org/). 
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/UniProtAnnotDownloader.png)
 
@@ -13,12 +27,17 @@ Next, locate the <b>proteinAnnotations.txt.gz</b> file which will be created by 
 
 ![alt text](https://github.com/gkoulouras/uniprot-annotation-downloader/blob/master/PerseusScreenShot1.png)
 
+<b>OS Requirements</b>
+
+The latest release of the software (version 1.04) has been tested on Windows 10 operating systems.
+
+
 <b>Contact:</b>
 
 For questions, suggestions, bug-reports or feedback, please get in touch by email:
 <ul><li>gkoulouras {at} gmail {dot} com</li></ul>
 
-<b>Cite us:</b>
+<b>Citation:</b>
 
 If you use this tool or data derived from this software in your research work please consider citing the following DOI: [10.5281/zenodo.6645639](https://doi.org/10.5281/zenodo.6645639)
 
