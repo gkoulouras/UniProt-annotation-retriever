@@ -1,4 +1,4 @@
-# Uniprot Annotation Retriever
+# UniProt Annotation Retriever
 
 ## Contents
 
