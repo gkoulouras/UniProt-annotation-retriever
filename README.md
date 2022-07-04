@@ -5,10 +5,10 @@
 - [Overview](#overview)
 - [Installation Guide](#installation-guide)
 - [System Requirements](#system-requirements)
-- [Demo](#demo)
-- [Results](#results)
-- [License](./LICENSE)
+- [Contact](#contact)
 - [Citation](#citation)
+- [License](#license)
+
 
 ## Overview
 
@@ -26,7 +26,12 @@ Next, locate the <b>proteinAnnotations.txt.gz</b> file which will be created by 
 
 ## System Requirements
 
-The latest release of the software (version 1.0.4) has been tested on Windows 10 operating systems.
+The software requires only a standard computer with enough RAM to support the operations defined by a user. Windows is the only supported OS at the moment. The latest release of the software (version 1.0.4) has been tested on Windows 10 operating systems with minimum 8GB of RAM and a dual-core i5-4200M CPU @2.50GHz. For optimal performance, we recommend a computer with the following specs:
+
+RAM: 16+ GB
+CPU: 4+ cores, 3.0+ GHz/core
+
+and interet connection of speed > 25 Mbps.
 
 ## Contact
 
