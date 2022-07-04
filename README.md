@@ -17,7 +17,7 @@ A standalone software tool that retrieves subcellular location, topology annotat
 
 ## Dependencies
 
-No installation is required to run the software. A compiled version is provided under the <b>Releases</b> section. `UniProt Annotation Retriever` requires Microsoft .NET Framework 4.5 (https://www.microsoft.com/en-US/download/details.aspx?id=30653).
+No installation is required to run the software. A compiled version is provided under the <b>Releases</b> section. `UniProt Annotation Retriever` requires Microsoft .NET Framework 4.5 (https://www.microsoft.com/en-US/download/details.aspx?id=30653) to be installed on your PC.
 
 ## Installation Guide
 
